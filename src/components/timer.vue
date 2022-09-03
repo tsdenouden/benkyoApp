@@ -25,7 +25,7 @@ const countDown = ref(1500)
 const timer = () => {
     if (countDown.value <= 0) {
         if (document.visibilityState !== "visible") {
-            let sessionComplete = new Notification("Benkyo", { 
+            let sessionComplete = new Notification("Benkyou", { 
                     body: "Session complete!",
                     icon: ""
                 })
@@ -69,7 +69,7 @@ const timerDisplay = computed(() => {
         sec = "0" + sec
     }
 
-    document.title = min.toString() + ":" + sec + " | Benkyo"
+    document.title = min.toString() + ":" + sec + " | Benkyou"
 
     return { min, sec }
 })

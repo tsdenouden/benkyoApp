@@ -1,9 +1,9 @@
-# Benkyo, a simple Pomodoro web app.
+# Benkyou, a simple Pomodoro web app.
 
-Benkyo is a mobile-friendly Pomodoro timer & to-do list web app made for 
+Benkyou is a mobile-friendly Pomodoro timer & to-do list web app made for 
 students to improve focus and reward productivity.
 
-Benkyo is currently in development, there are still a few or several things that
+Benkyou is currently in development, there are still a few or several things that
 I'd like to add and optimise.
 
 ## Features:

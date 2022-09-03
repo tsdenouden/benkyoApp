@@ -3,7 +3,7 @@ import taskList from './components/taskList.vue'
 import timer from './components/timer.vue'
 import navBar from './components/navBar.vue'
 
-document.title = "Benkyo"
+document.title = "Benkyou"
 
 // Request permission for notifications
 Notification.requestPermission()
