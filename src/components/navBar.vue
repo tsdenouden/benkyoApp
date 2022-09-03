@@ -43,7 +43,7 @@ const ghOpacity = computed(() => {
         <!-- Title & description -->
         <div>
             <div class="mb-3 md:mb-0">
-                <span class="font-mono font-bold text-5xl md:text-2xl">./Benkyo</span>
+                <span class="font-mono font-bold text-5xl md:text-2xl">./Benkyou</span>
             </div>
             <span class="text-sm hidden md:flex">Simple Pomodoro timer & todo-list app | 
             Tristan Shawn den Ouden 2022</span>
