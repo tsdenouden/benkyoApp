@@ -1,30 +1,41 @@
+<script setup>
+import taskList from './components/taskList.vue'
+import timer from './components/timer.vue'
+import navBar from './components/navBar.vue'
+
+document.title = "Benkyo"
+
+// Request permission for notifications
+Notification.requestPermission()
+
+</script>
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  
+  <!-- Pomodoro App Components -->
+  <div class="min-w-screen min-h-screen max-w-full max-h-full
+  backdrop-filter backdrop-blur-md bg-white bg-opacity-90 
+  dark:bg-zinc-900 dark:bg-opacity-75">
+  <navBar />
+    <div v-motion-fade class="flex flex-col justify-center items-center
+    p-10">
+      <timer />
+      <taskList />
+    </div>
+  </div>
+  
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+body {
+  background-image: url(assets/images/bgimage.jpg);
+  background-size: cover;
 }
 
-nav {
-  padding: 30px;
+
+html.dark {
+  color-scheme: dark;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
