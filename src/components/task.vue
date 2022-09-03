@@ -13,30 +13,24 @@ const taskState = ref(false)
 const taskProps = computed(() => {
     
     let task = reactive({
-
         // radio circle css
         outerCircle: String,
         innerCircle: String,
 
         // input field
         inputDisabled: Boolean
-
     })
     
     if (taskState.value === true) {
-
         task.outerCircle = "border-zinc-600 hover:bg-zinc-300 dark:hover:bg-zinc-800"
         task.innerCircle = "bg-zinc-600"
 
         task.inputDisabled = true
-
     } else {
-
         task.outerCircle = "border-sky-500 hover:bg-sky-100 dark:hover:bg-sky-900"
         task.innerCircle = "bg-transparent"
 
         task.inputDisabled = false
-
     }
 
     return task
