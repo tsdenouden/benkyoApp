@@ -34,6 +34,7 @@ const pushTask = () => {
         tasks.push(newTask)
         current_Task += 1
         userInput.value = ''
+        console.log(tasks)
     }
 
 }
