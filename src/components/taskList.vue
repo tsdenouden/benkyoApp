@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref } from '@vue/runtime-core'
-import task from './task.vue'
+import task from './singleTask.vue'
 
 
 // current task id
@@ -34,9 +34,7 @@ const pushTask = () => {
         tasks.push(newTask)
         current_Task += 1
         userInput.value = ''
-        console.log(tasks)
     }
-
 }
 
 const submitTask = (e) => {
