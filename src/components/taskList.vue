@@ -83,9 +83,7 @@ const clearTasks = () => {
         <!-- List of tasks -->
         <div v-for="task in tasks.slice().reverse()" :key="task.id">
             <div v-motion-pop class="flex">
-                <div>
-                    <task :textContent="task.content"/>
-                </div>
+                <task :textContent="task.content"/>
 
                 <!-- Delete individual tasks (Not available for mobile) -->
                 <button @click="taskRemove(task.id)"

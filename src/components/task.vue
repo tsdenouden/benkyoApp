@@ -11,7 +11,6 @@ const taskState = ref(false)
 
 // change task item properties based on task state
 const taskProps = computed(() => {
-    
     let task = reactive({
         // radio circle css
         outerCircle: String,

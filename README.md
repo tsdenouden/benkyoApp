@@ -19,6 +19,12 @@ I'd like to add and optimise.
 * Make the timer more accurate.
 * Save user's tasks locally.
 * Automatically switch to the right timer when a session is completed. E.g 1 Pomodoro session -> 1 Short break
+* Improve browser notifications
+* Improve send button animations
+* Improve timer select
+* Change bin emoji to bin icon
+* Add about page
+
 
 
 ## Project setup
