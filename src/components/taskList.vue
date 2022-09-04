@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref } from '@vue/runtime-core'
-import task from './singleTask.vue'
+import singleTask from "./singleTask.vue"
 
 
 // current task id
@@ -82,7 +82,7 @@ const clearTasks = () => {
         <!-- List of tasks -->
         <div v-for="task in tasks.slice().reverse()" :key="task.id">
             <div v-motion-pop class="flex">
-                <task :textContent="task.content"/>
+                <singleTask :textContent="task.content"/>
 
                 <!-- Delete individual tasks (Not available for mobile) -->
                 <button @click="taskRemove(task.id)"
