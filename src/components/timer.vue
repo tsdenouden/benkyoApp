@@ -33,9 +33,9 @@ const pomoTimer = () => {
         if (document.visibilityState !== "visible") {
             let sessionComplete = new Notification("Benkyou", {
                     body: "Session complete!",
-                        icon: "https://github.com/tsdenouden/benkyouApp/blob/main/src/assets/images/timer-line.png",
-                        image: "https://github.com/tsdenouden/benkyouApp/blob/main/src/assets/images/timer-line.png",
-                        badge: "https://github.com/tsdenouden/benkyouApp/blob/main/src/assets/images/timer-line.png"               
+                        icon: "https://raw.githubusercontent.com/tsdenouden/benkyouApp/main/src/assets/images/timer-line.png",
+                        image: "https://raw.githubusercontent.com/tsdenouden/benkyouApp/main/src/assets/images/timer-line.png",
+                        badge: "https://raw.githubusercontent.com/tsdenouden/benkyouApp/main/src/assets/images/timer-line.png"
                     })
         }
         // *auto* reset timer
