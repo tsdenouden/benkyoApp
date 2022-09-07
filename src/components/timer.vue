@@ -2,10 +2,10 @@
 const { computed, ref }=require("@vue/runtime-core")
 
 // timer select, values in ms
-const durationSelect = { pomodoro: 1500, short: 300, long: 900}
+//const durationSelect = { pomodoro: 1500, short: 300, long: 900}
 
 
-//const durationSelect = { pomodoro: 2, short: 1, long: 5}
+const durationSelect = { pomodoro: 2, short: 1, long: 5}
 
 
 // toggle timer
@@ -33,8 +33,10 @@ const pomoTimer = () => {
         if (document.visibilityState !== "visible") {
             let sessionComplete = new Notification("Benkyou", {
                     body: "Session complete!",
-                    icon: ""
-                })
+                        icon: "https://github.com/tsdenouden/benkyouApp/blob/main/src/assets/images/timer-line.png",
+                        image: "https://github.com/tsdenouden/benkyouApp/blob/main/src/assets/images/timer-line.png",
+                        badge: "https://github.com/tsdenouden/benkyouApp/blob/main/src/assets/images/timer-line.png"               
+                    })
         }
         // *auto* reset timer
         resetTimer(currentDuration.value, true)
