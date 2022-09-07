@@ -2,10 +2,10 @@
 const { computed, ref }=require("@vue/runtime-core")
 
 // timer select, values in ms
-//const durationSelect = { pomodoro: 1500, short: 300, long: 900}
+const durationSelect = { pomodoro: 1500, short: 300, long: 900}
 
 
-const durationSelect = { pomodoro: 2, short: 1, long: 5}
+//const durationSelect = { pomodoro: 2, short: 1, long: 5}
 
 
 // toggle timer

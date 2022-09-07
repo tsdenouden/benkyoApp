@@ -13,21 +13,18 @@ I'd like to add and optimise.
 * Timer - 3 options: Pomodoro session (25min), Short break (5min), Long break (15min).
 * To-do list - Write down what needs to be done during the study session.
 * Dark mode - For late night studying.
-* Mobile friendly - Use Benkyou on the go. 
+* Mobile friendly - Use Benkyou on the go.
+* Browser notifications
+* Auto timer switching. Pomodoro session complete -> Short break timer selected
 
 
 ## To be done:
 
 * Make the timer more accurate.
 * Save user's tasks locally.
-* Automatically switch to the right timer when a session is completed. E.g 1 Pomodoro session -> 1 Short break
-* Improve browser notifications
 * Improve send button animations
-* Improve timer select
 * Change bin emoji to bin icon
 * Add about page
-
-
 
 ## Project setup
 ```
