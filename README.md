@@ -2,6 +2,8 @@
 
 [Try Benkyou Here](https://benkyou.vercel.app/)
 
+![Image of the Benkyou Web app opened on 2 Iphones & a Macbook Air](https://raw.githubusercontent.com/tsdenouden/benkyouApp/main/src/assets/images/benkyough.png)
+
 Benkyou is a mobile-friendly Pomodoro timer & to-do list web app made for 
 students to improve focus and reward productivity.
 
