@@ -96,5 +96,12 @@ const clearTasks = () => {
         <!-- Clear all tasks -->
         <div @click="clearTasks" class="text-white font-bold
         bg-sky-500 hover:bg-sky-400 rounded-lg p-5 m-5">Clear all tasks</div>
+    
+        <div class="hidden md:flex font-bold bg-zinc-300 hover:bg-zinc-400
+        dark:bg-zinc-700 dark:hover:bg-zinc-800
+        transition ease-in-out duration-200
+        rounded-lg px-3 py-1 mt-10">
+            <router-link to="/about">What is Benkyou?</router-link>
+        </div>
     </div>
 </template>

@@ -13,7 +13,7 @@ I'd like to add and optimise.
 * Timer - 3 options: Pomodoro session (25min), Short break (5min), Long break (15min).
 * To-do list - Write down what needs to be done during the study session.
 * Dark mode - For late night studying.
-* Mobile friendly - Use Benkyo on the go. 
+* Mobile friendly - Use Benkyou on the go. 
 
 
 ## To be done:

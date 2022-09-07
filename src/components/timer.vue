@@ -1,6 +1,12 @@
 <script setup>
 const { computed, ref }=require("@vue/runtime-core")
 
+// timer select, values in ms
+const durationSelect = { pomodoro: 1500, short: 300, long: 900}
+
+
+//const durationSelect = { pomodoro: 2, short: 1, long: 5}
+
 
 // toggle timer
 var timerOn = false
@@ -19,19 +25,19 @@ const toggleTimer = () => {
 }
 
 
-// start timer
-const countDown = ref(1500)
+const countDown = ref(durationSelect.pomodoro)
 
-const timer = () => {
+const pomoTimer = () => {
     if (countDown.value <= 0) {
+        // notify user of completed session if they're on a different webpage
         if (document.visibilityState !== "visible") {
-            let sessionComplete = new Notification("Benkyou", { 
+            let sessionComplete = new Notification("Benkyou", {
                     body: "Session complete!",
                     icon: ""
                 })
         }
-        resetTimer(currentDuration.value)
-        clearInterval(newTimer)
+        // *auto* reset timer
+        resetTimer(currentDuration.value, true)
     } else {
         if (timerOn != false) {
             countDown.value -= 1
@@ -39,18 +45,46 @@ const timer = () => {
     }
 }
 
-var newTimer = setInterval(timer, 1000)
+var newTimer = setInterval(pomoTimer, 1000)
 
 
-// reset timer
-const currentDuration = ref(1500)
+// currentDuration -> used to check which timer is currently being used
+let pomodoroCount = 0
+let breakCheck = false
+const currentDuration = ref(durationSelect.pomodoro)
 
-const resetTimer = (newDuration) => {
-    // clear timer & update duration
+const resetTimer = (newDuration, autoReset=false) => {
     clearInterval(newTimer)
+
+    // auto reset, overrides newDuration argument
+    if (autoReset === true) {
+        // check if user just completed a pomodoro session
+        if (currentDuration.value === durationSelect.pomodoro) {
+            pomodoroCount += 1
+            breakCheck = true
+        } else {
+            breakCheck = false
+        }
+        // change new duration after x amount of pomodoros
+        switch (pomodoroCount) {
+            case 4:
+                newDuration = durationSelect.long
+                pomodoroCount = 0
+                break
+            default:
+                if (breakCheck === true) {
+                    newDuration = durationSelect.short
+                } else {
+                    newDuration = durationSelect.pomodoro
+                }
+                break
+        }
+    }
+
+    // update
     countDown.value = newDuration
     currentDuration.value = newDuration
-    newTimer = setInterval(timer, 1000)
+    newTimer = setInterval(pomoTimer, 1000)
 
     // pause timer
     timerOn = false
@@ -81,19 +115,19 @@ const timerDisplay = computed(() => {
     <div class="flex flex-col justify-center text-center items-center font-mono">
         <!-- Timer Select: Pomodoro Session, Short break, Long break -->
         <div class="flex flex-row items-center text-sm text-black dark:text-white mb-10">
-            <div @click="resetTimer(1500)"
+            <div @click="resetTimer(durationSelect.pomodoro)"
             class="grow bg-sky-200 hover:bg-sky-300 dark:bg-sky-700 dark:hover:bg-sky-900
             rounded-md px-5 py-3 mx-3">
                 Pomodoro<br>Session
             </div>
             
-            <div @click="resetTimer(300)"
+            <div @click="resetTimer(durationSelect.short)"
             class="grow bg-sky-200 hover:bg-sky-300 dark:bg-sky-700 dark:hover:bg-sky-900
             rounded-md px-5 py-3 mx-3">
                 Short<br>break
             </div>
 
-            <div @click="resetTimer(900)"
+            <div @click="resetTimer(durationSelect.long)"
             class="grow bg-sky-200 hover:bg-sky-300 dark:bg-sky-700 dark:hover:bg-sky-900
             rounded-md px-5 py-3 mx-3">
                 Long<br>break

@@ -3,6 +3,11 @@ import { ref } from "@vue/reactivity"
 import { computed } from "@vue/runtime-core"
 import darkMode from "./darkMode.vue"
 
+const props = defineProps({
+    linkMsg: String,
+    linkHref: String
+})
+
 
 // opacity of social media icons
 const ghSelect = ref(0)
@@ -35,18 +40,29 @@ const ghOpacity = computed(() => {
 
 <template>
     <!-- Dark Mode button (for mobile) -->
-    <div class="flex justify-left md:hidden pt-3 px-3 md:pt-0 md:px-0">
-        <darkMode />
+    <div class="flex justify-between items-center md:hidden pt-3 px-3 md:pt-0 md:px-0">
+        <darkMode /> 
+        <div class="font-bold dark:text-zinc-900  bg-zinc-300 
+        hover:bg-zinc-400 rounded-lg
+        transition ease-in-out duration-300 p-1 px-3 mt-3">
+            <router-link :to="linkHref">{{ linkMsg }}</router-link>
+        </div>
     </div>
 
     <div class="flex flex-col md:flex-row justify-center md:justify-between items-center mx-10 md:mx-32 pt-8 md:pt-10">
         <!-- Title & description -->
         <div>
             <div class="mb-3 md:mb-0">
-                <span class="font-mono font-bold text-5xl md:text-2xl">./Benkyou</span>
+                <span class="font-mono font-bold text-5xl md:text-2xl">
+                    ./Benkyou
+                </span>
             </div>
-            <span class="text-sm hidden md:flex">Simple Pomodoro timer & todo-list app | 
-            Tristan Shawn den Ouden 2022</span>
+
+            <span class="text-sm hidden md:flex">
+                Simple Pomodoro timer & todo-list app | 
+                Tristan Shawn den Ouden 2022
+            </span>
+
             <!-- Dark Mode button (for PC) -->
             <div class="hidden md:flex">
                 <darkMode />

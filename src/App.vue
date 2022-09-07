@@ -11,19 +11,11 @@ Notification.requestPermission()
 </script>
 
 <template>
-  
-  <!-- Pomodoro App Components -->
   <div class="min-w-screen min-h-screen max-w-full max-h-full
   backdrop-filter backdrop-blur-md bg-white bg-opacity-90 
   dark:bg-zinc-900 dark:bg-opacity-75">
-  <navBar />
-    <div v-motion-fade class="flex flex-col justify-center items-center
-    p-10">
-      <timer />
-      <taskList />
-    </div>
+    <router-view></router-view>
   </div>
-  
 </template>
 
 <style>
